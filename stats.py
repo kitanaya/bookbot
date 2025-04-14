@@ -14,13 +14,15 @@ def get_char_count(text):
     return num_chars
 
 
-# def sort_on(dict):
-#     return dict["num"]
+def sort_on(dict):
+    return dict["count"]
+
 
 def get_key_value(chars):
     sorted_list = []
     for char in chars:
         new_dict = {"char": char, "count": chars[char]}
         sorted_list.append(new_dict)
-    sorted_list.sort(reverse=True, key=lambda x: x["count"])
+    # sorted_list.sort(reverse=True, key=lambda x: x["count"])
+    sorted_list.sort(reverse=True, key=sort_on)
     return sorted_list

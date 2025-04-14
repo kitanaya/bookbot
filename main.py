@@ -3,6 +3,7 @@ from stats import get_char_count
 from stats import get_key_value
 from pathlib import Path
 
+
 def get_book_text(filepath):
     path = Path(filepath)
     if not path.exists():
@@ -12,7 +13,6 @@ def get_book_text(filepath):
         return f.read()
 
 
-
 def main():
     book = f"books/frankenstein.txt"
     text = get_book_text(book)
@@ -20,13 +20,11 @@ def main():
     num_chars = get_char_count(text)
     sorted_list = get_key_value(num_chars)
     
-    header = f"""
-============ BOOKBOT ============
+    header = f"""============ BOOKBOT ============
 Analyzing book found at {book}...
 ----------- Word Count ----------
 Found {num_words} total words
---------- Character Count -------
-"""
+--------- Character Count -------"""
     footer = f"============= END ==============="
 
     print(header)
